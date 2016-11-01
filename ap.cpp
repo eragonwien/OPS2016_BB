@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
+int assignment(int job, int** kosten);
 int getMin(int, int*, bool*);
-int getNodeCost(int, int, int, int*, int**, bool**);
+int getNodeCost(int, int, int, int*, int**, bool*);
+
 struct Node
 {
 	/*
@@ -23,7 +25,6 @@ struct Node
 		this->person = person;
 		this->job = job;
 		this->len = len;
-		this->table = table;
 		/* -----------ROOT-----------*/
 		if(!parent)
 		{
@@ -38,7 +39,7 @@ struct Node
 			}
 			for (int i = 0; i < len; ++i)
 			{
-				children[i] = new Node(0, len, this, table);
+				children[i] = new Node(0, i, len, this, table);
 			}
 		}
 		/*---------Node---------------*/
@@ -54,7 +55,8 @@ struct Node
 	/*----- Decontructor------*/
 	~Node()
 	{
-		delete[] space;
+		delete[] job_space;
+		delete[] person_space;
 		delete[] rootpath;
 		if(children)
 		{
@@ -65,10 +67,15 @@ struct Node
 		}
 	}
 };
+int assignment(int job, int** kosten)
+{
+	Node * root = new Node(-1, -1, job, nullptr, kosten);
+	return 0;
+}
 int getMin(int len, int * array, bool * job_space)
 {
 	int min = 0;
-	if (!free_space)
+	if (!job_space)
 	{
 		for (int i = 0; i < len; ++i)
 		{
@@ -80,12 +87,12 @@ int getMin(int len, int * array, bool * job_space)
 	{
 		for (int i = 0; i < len; ++i)
 		{
-			if(free_space[i])
+			if(job_space[i])
 				min = i;
 		}
 		for (int i = 0; i < len; ++i)
 		{
-			if(free_space[i] && (array[min] > array[i]))
+			if(job_space[i] && (array[min] > array[i]))
 				min = i;
 		}
 	}
@@ -101,7 +108,7 @@ int getNodeCost(int person, int job, int len, int* rootpath, int** table, bool* 
 		else if(i == person)
 			cost+=table[person][job];
 		else
-			cost += getMin(len, table[person],job_space)
+			cost += getMin(len, table[i],job_space);
 	}
 	return cost;
 }
