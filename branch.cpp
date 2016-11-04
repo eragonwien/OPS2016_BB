@@ -25,6 +25,7 @@ int main(int argc, char const *argv[])
 	Node * root = new Node(-1,-1,len,nullptr,table);
 	branch(root, len);
 	showAllNodes(root, len);
+	delete[] table;
 }
 void makeTable(int len, int** table)
 {
