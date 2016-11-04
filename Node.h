@@ -38,10 +38,6 @@ struct Node
 				person_space[i] = true;
 				//rootpath[i] = getMin(len, table[i],nullptr);
 			}
-			for (int i = 0; i < len; ++i)
-			{
-				children[i] = new Node(0, i, len, this, table);
-			}
 		}
 		/*---------Node---------------*/
 		else
@@ -56,10 +52,14 @@ struct Node
 	/*----- Decontructor------*/
 	~Node()
 	{
-		delete[] job_space;
-		delete[] person_space;
-		delete[] rootpath;
-		delete[] table;
+		if (job_space)	
+			delete[] job_space;
+		if(person_space)
+			delete[] person_space;
+		if(rootpath)
+			delete[] rootpath;
+		if(table)
+			delete[] table;
 		if(children)
 		{
 			for (int i = 0; i < len; ++i)
