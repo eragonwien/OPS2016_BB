@@ -7,7 +7,7 @@ using namespace std;
 void makeTable(int, int**);
 int main(int argc, char const *argv[])
 {
-	int len = 5;
+	int len = 100;
 	int ** table = new int*[len];
 	makeTable(len, table);
 	cout<<"length : "<<len<<endl;
@@ -24,7 +24,8 @@ int main(int argc, char const *argv[])
 	}
 	Node * root = new Node(-1,-1,len,nullptr,table);
 	branch(root, len);
-	showAllNodes(root, len);
+	//showAllNodes(root, len);
+	showRootPath(root, len);
 	delete[] table;
 }
 void makeTable(int len, int** table)
