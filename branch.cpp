@@ -7,7 +7,17 @@ using namespace std;
 void makeTable(int, int**);
 int main(int argc, char const *argv[])
 {
-	int len = 100;
+	cout << "Type in length!" << endl;
+	int len = 4;
+	try
+	{
+		cin >> len;
+	}
+	catch (const std::exception&)
+	{
+		
+	}
+	
 	int ** table = new int*[len];
 	makeTable(len, table);
 	cout<<"length : "<<len<<endl;
@@ -15,10 +25,11 @@ int main(int argc, char const *argv[])
 	{
 		for (int y = 0; y < len; ++y)
 		{
-			if(y != 0)
-				cout<<"-"<<table[x][y];
-			else
-				cout<<table[x][y];
+			if (y != 0)
+				cout << "-";
+			cout<<table[x][y];
+			if (table[x][y] <= 9)
+				cout << " ";
 		}
 		cout<<endl;
 	}
