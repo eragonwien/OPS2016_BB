@@ -10,4 +10,4 @@ Format des Textfiles: Erste Zeile bestimmte die Anzahl der Matrix d.h. bei der A
 Achtung: die Zählung beginnt von 0, d.h. falls 4 eingegeben wird, ist die letzte Zeile 3. (siehe Beispiel test3)
 
 
-
+Anzahl der Jobs: 5 ist der Standardwert(zwischen 1 und 1000 ist opitmal), wenn ein ungueltiger Wert eingegeben wird, wird eine exeption geworfen.
