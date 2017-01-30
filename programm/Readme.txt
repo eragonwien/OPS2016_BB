@@ -1,5 +1,9 @@
+Information über Assignment Problem Implementierung
+===================================================
+
 
 #Verwendung:
+------------
 
 Nach dem Start des Programms gibt es zwei Möglichkeiten, Tabelle erstellen oder Assignment berechnen, bei Eingabe von eins wird ein neue Textfile mit Testdaten generiert, bei Eingabe von zwei wird ein Pfad zu einem bereit erstellendem Textfile erstellt.
 
