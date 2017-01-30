@@ -8,6 +8,9 @@ Contributor: Elzagalmi
 
 #Verwendung:
 ===========
+Kompilieren: Nach dem sie den Folder auf github hochgeladen haben, können Sie einfach mit dem C++ Compiler das Testen.cpp Datei in c++14 Kompilieren.
+Zum Beispiel mit dem C++ Compiler: "g++ Testen.cpp -o Testen -std=c++14" eingeben.
+
 Nach dem Start des Programms gibt es zwei Möglichkeiten, Tabelle erstellen oder Assignment berechnen, bei Eingabe von eins wird ein neue Textfile mit Testdaten generiert, bei Eingabe von zwei wird ein Pfad zu einem bereit erstellendem Textfile erstellt.
 
 Pfad zu Textfile: Muss wie für das jeweilige OS üblich angegeben werden, in diesem Textfile steht die Kostentabelle  
